@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ur Maam</title>
+		<link rel="stylesheet" href="style.css"/>
+	</head>
+	<body>
+		<header>
+			<h1>WebAssembly vs. vanilla Javascript</h1>
+		</header>
+		<main>
+			<section>
+				<h3>Comparing Javascript to WebAssembly compiled from hand-written WA text format (.wat)</h3>
+				<p>Counts from 0 to <span id="numToLoad"></span>.</p>
+			</section>
+			<div class="twoSections">
+				<section>
+					<button onClick="onClickJS1()">Count in JS</button>
+					<p id="jsStart">started...</p>
+					<p id="jsDone">done. (<span id="jsTime"></span> s)</p>
+					<code>
+						for (let i = 0; i < <span id="numCode1"></span>; i++) { }
+					</code>
+				</section>
+				<section>
+					<button onClick="onClickWA1()">Count in WA</button>
+					<p id="waStart">started...</p>
+					<p id="waDone">done. (<span id="waTime"></span> s)</p>
+					<code>
+<pre>i64.const 9999999999
+local.set $i
+(loop $dec
+	local.get $i
+	i64.const 1
+	i64.sub
+	local.tee $i
+	i64.const 0
+	i64.ne
+	br_if $dec
+)</pre>
+					</code>
+				</section>
+			</div>
+			<hr/>
+			<section>
+				<h3>Comparing Javascript to WebAssembly compiled from C.</h3>
+				<p>Takes two integers and either adds them or subtracts them together <span id="numToIterate"></span> times.</p>
+				<div class="formie">
+					<label for="num1">Number 1: </label>
+					<input type="number" id="num1"/>
+				</div>
+				<div class="formie">
+					<label for="num2">Number 2: </label>
+					<input type="number" id="num2"/>
+				</div>
+				<div class="formie">
+					<input type="radio" name="addRadios" checked id="addRadio"/>
+					<label for="addRadio">&nbsp;add</label>
+				</div>
+				<div class="formie">
+					<input type="radio" name="addRadios" id="subRadio"/>
+					<label for="subRadio">&nbsp;subtract</label>
+				</div>
+			</section>
+			<div class="twoSections">
+				<section>
+					<button onClick="onClickJS2()">Count in JS</button>
+					<p id="js2Start">started...</p>
+					<p id="js2Done">done. (<span id="js2Time"></span> s)</p>
+					<code>
+<pre>for (let i = 0; i < <span id="numCode2"></span>; i++) {
+	if (add) num1 += num2;
+	else num1 -= num2;
+};</pre>
+					</code>
+				</section>
+				<section>
+					<button onClick="onClickWA2()">Count in WA</button>
+					<p id="wa2Start">started...</p>
+					<p id="wa2Done">done. (<span id="wa2Time"></span> s)</p>
+					<code>
+<pre>for (int i = 0; i < 99999999; i++) {
+	if (add) num1 += num2;
+	else num1 -= num2;
+}</pre>
+					</code>
+				</section>
+			</div>
+		</main>
+		<script src="main.js"></script>
+	</body>
+</html>

@@ -1,0 +1,72 @@
+:root {
+	--border-radius: 24px;
+	--page-width: 60%;
+}
+
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	width: var(--page-width);
+	margin: auto;
+}
+main {
+	padding: 0;
+	margin-bottom: 256px;
+}
+hr {
+	margin-block: 0;
+	margin-bottom: var(--border-radius);
+	width: 80%;
+	border-color: #ededed;
+	border-style: solid;
+}
+section {
+	background: #ededed;
+	border-radius: var(--border-radius);
+	padding: 2rem;
+	margin: 0 0 var(--border-radius) 0;
+}
+section > code {
+	display: block;
+	margin: 0 auto var(--border-radius) auto;
+	padding: var(--border-radius);
+	border-radius: var(--border-radius);
+	text-align: left;
+	background: #dfdfdf;
+	width: fit-content;
+}
+h1 {
+	text-align: center;
+	font-size: 42pt;
+}
+h3 {
+	font-size: 18pt;
+	font-weight: normal;
+}
+p {
+	font-size: 12pt;
+}
+header {
+	margin: 80px auto var(--border-radius) auto;
+	background: #644FF0;
+	padding: 2rem;
+	color: white;
+	border-radius: var(--border-radius);
+}
+.twoSections {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: var(--border-radius);
+}
+.formie {
+	display: flex;
+	margin: 8px 0;
+}
+.formie > p {
+	margin-block: 0;
+}
+.twoSections > section {
+	text-align: center;
+}
+#waStart, #waDone, #jsStart, #jsDone, #wa2Start, #wa2Done, #js2Start, #js2Done {
+	visibility: hidden;
+}
