@@ -4,7 +4,7 @@
 }
 
 body {
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: sans-serif;
 	width: var(--page-width);
 	margin: auto;
 }
