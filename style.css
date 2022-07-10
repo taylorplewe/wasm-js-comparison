@@ -67,6 +67,8 @@ header {
 .twoSections > section {
 	text-align: center;
 }
-#waStart, #waDone, #jsStart, #jsDone, #wa2Start, #wa2Done, #js2Start, #js2Done {
+#waStart, #waDone, #jsStart, #jsDone,
+#wa2Start, #wa2Done, #js2Start, #js2Done,
+#wa3Start, #wa3Done, #js3Start, #js3Done, #js3ans-label, #wa3ans-label {
 	visibility: hidden;
 }

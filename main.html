@@ -86,6 +86,56 @@ local.set $i
 					</code>
 				</section>
 			</div>
+			<hr/>
+			<section>
+				<p>Performs a convoluted mess of a function <span id="descrNum3"></span> times, given a starting number.</p>
+				<div class="formie">
+					<label for="convNum">Starting number: </label>
+					<input type="number" id="convNum"/>
+				</div>
+			</section>
+			<div class="twoSections">
+				<section>
+					<button onClick="onClickJS3()">Count in JS</button>
+					<p id="js3Start">started...</p>
+					<p id="js3Done">done. (<span id="js3Time"></span> s)</p>
+					<p id="js3ans-label">result: <span id="js3ans"></span></p>
+					<code>
+<pre>let num2 = num1;
+
+for (let i = 0; i < <span id="numCode3"></span>; i++) {
+	if (i % 7 === 0)
+		num1 += Math.floor(i / 3);
+	else if ((i + Math.floor(num2)) % 2 === 0)
+		num1 /= 2;
+	else if (i % 10 === 0)
+		num2 *= 2;
+	else
+		num1++;
+}</pre>
+					</code>
+				</section>
+				<section>
+					<button onClick="onClickWA3()">Count in WA</button>
+					<p id="wa3Start">started...</p>
+					<p id="wa3Done">done. (<span id="wa3Time"></span> s)</p>
+					<p id="wa3ans-label">result: <span id="wa3ans"></span></p>
+					<code>
+<pre>double num2 = num1;
+
+for (int i = 0; i < <span id="numCode4"></span>; i++) {
+	if (i % 7 == 0)
+		num1 += i / 3;
+	else if ((int)(i + num2) % 2 == 0)
+		num1 /= 2;
+	else if (i % 10 == 0)
+		num2 *= 2;
+	else
+		num1++;
+}</pre>
+					</code>
+				</section>
+			</div>
 		</main>
 		<script src="main.js"></script>
 	</body>
