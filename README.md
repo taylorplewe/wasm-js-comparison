@@ -1,5 +1,7 @@
 # wasm-js-comparison
 
+### [https://tplewe.com/wasm-js-comparison](https://tplewe.com/wasm-js-comparison)
+
 ### Download & run
 ```
 git clone https://github.com/taylorplewe/wasm-js-comparison.git
